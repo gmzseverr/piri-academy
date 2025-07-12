@@ -17,7 +17,6 @@ function Hero() {
         {/* Metin Kutusu (Sol Tarafta) */}
         <div className="w-full md:w-1/2 text-white text-center md:text-left p-6 md:p-0">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg animate-fade-in-up">
-            {/* Piri'nin ana rengi olan turuncu kullanıldı */}
             Merhaba! <br /> Ben <span className="text-orange-400">Piri</span>
           </h1>
           <p className="text-lg sm:text-xl lg:text-2xl drop-shadow-md animate-fade-in-up animation-delay-300">

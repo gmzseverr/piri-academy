@@ -46,7 +46,7 @@ function Footer() {
           </div>
           <div className="text-white hover:text-amber-500 cursor-pointer transition-colors duration-300 text-3xl transform hover:scale-110">
             <a
-              href="mailto:info@piriacademy.com"
+              href="mailto:trpiritr@gmail.com"
               className="text-white hover:text-amber-500 hover:underline flex items-center gap-2" // Added flex and gap for icon and text alignment
             >
               <FaEnvelope />
