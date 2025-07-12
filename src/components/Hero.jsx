@@ -6,7 +6,7 @@ function Hero() {
       id="anasayfa"
       className="relative w-full h-screen bg-cover bg-center flex items-center justify-center overflow-hidden" // h-screen ile tam ekran yüksekliği, overflow-hidden ile taşmaları engelle
       style={{
-        backgroundImage: `url('public/assets/hi.jpeg')`, // BURAYI Piri ve gökyüzü içeren görsel yoluna göre değiştir
+        backgroundImage: `url('assets/hi.jpeg')`, // BURAYI Piri ve gökyüzü içeren görsel yoluna göre değiştir
         backgroundPosition: "center right", // Görselin sağ tarafını merkeze al (Piri sağdaysa)
       }}
     >
