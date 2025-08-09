@@ -7,11 +7,31 @@ const audienceMap = {
   teachers: "Öğretmenler",
 };
 
+// src/components/ContentCard.jsx
+
 export function getExcerptFromBody(body, charLimit = 150) {
   if (!Array.isArray(body)) return "";
-  const firstBlock = body.find((block) => block._type === "block");
-  if (!firstBlock || !firstBlock.children) return "";
-  const text = firstBlock.children.map((child) => child.text).join(" ");
+
+  // İlk boş olmayan metin bloğunu bulmak için bir döngü kullanıyoruz
+  const firstTextBlock = body.find((block) => {
+    // Hem tipin "block" olduğundan emin ol
+    // Hem de children içinde en az bir eleman ve bu elemanın boş olmayan bir metni olduğundan emin ol
+    return (
+      block._type === "block" &&
+      block.children &&
+      block.children.some(
+        (child) => child._type === "span" && child.text.trim() !== ""
+      )
+    );
+  });
+
+  if (!firstTextBlock) return "";
+
+  const text = firstTextBlock.children
+    .filter((child) => child._type === "span") // Sadece metin içeren span'leri al
+    .map((child) => child.text) // Metinleri bir diziye dönüştür
+    .join(" "); // Birleştir
+
   return text.length > charLimit ? text.slice(0, charLimit) + "..." : text;
 }
 
