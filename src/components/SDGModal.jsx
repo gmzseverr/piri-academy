@@ -1,16 +1,15 @@
+"use client";
 import React from "react";
-import ReactDOM from "react-dom";
 
 function SDGModal({ goal, onClose }) {
-  if (!goal) return null; // Eğer hedef yoksa modalı gösterme
+  if (!goal) return null;
 
   return ReactDOM.createPortal(
     <div className="fixed inset-0 bg-gradient-to-br from-amber-300 to-cyan-100 flex items-center justify-center p-4 z-50 animate-fade-in">
       <div
         className="relative bg-cover bg-center bg-no-repeat rounded-xl shadow-2xl max-w-4xl md:max-w-5xl w-full h-[85vh] md:h-[75vh] overflow-hidden flex flex-col justify-end animate-scale-in" // Modal boyutları, justified-end
-        style={{ backgroundImage: `url(${goal.wallpaper})` }} // Wallpaper'ı arka plan olarak kullan
+        style={{ backgroundImage: `url(${goal.wallpaper})` }}
       >
-        {/* Kapat Butonu */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-white hover:text-gray-200 text-3xl md:text-4xl font-bold leading-none z-30 drop-shadow-lg"
@@ -19,10 +18,8 @@ function SDGModal({ goal, onClose }) {
           &times;
         </button>
 
-        {/* Metin için Gradyan Overlay */}
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
 
-        {/* Modal İçerik (Başlık, Açıklama ve Anladım Butonu) */}
         <div className="relative z-20 p-6 md:p-8 text-white">
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 leading-tight drop-shadow-lg">
             {goal.title}
@@ -39,7 +36,6 @@ function SDGModal({ goal, onClose }) {
         </div>
       </div>
 
-      {/* Animasyon için Tailwind CSS keyframes (tailwind.config.js'e eklenmeli) */}
       <style jsx>{`
         @keyframes fade-in {
           from {

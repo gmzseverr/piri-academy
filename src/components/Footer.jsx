@@ -5,10 +5,9 @@ function Footer() {
   return (
     <footer
       id="iletişim"
-      className="bg-gradient-to-r from-amber-300 to-lime-200 text-white py-8 px-4 shadow-lg" // Reduced vertical padding for better mobile fit
+      className="bg-gradient-to-r from-amber-300 to-lime-200 text-white py-8 px-4 shadow-lg"
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        {/* Left Section: Brand and Contact */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <div className="flex items-center gap-3 text-3xl font-extrabold text-white mb-2 transform hover:scale-105 transition-transform duration-300">
             <div>
@@ -29,10 +28,8 @@ function Footer() {
           </div>
         </div>
 
-        {/* Right Section: Social Media Icons */}
         <div className="flex items-center justify-center gap-5">
           {" "}
-          {/* Changed to justify-center for mobile centering */}
           <div>
             <a
               href="https://www.instagram.com/piriacademy/"
@@ -47,21 +44,18 @@ function Footer() {
           <div className="text-white hover:text-amber-500 cursor-pointer transition-colors duration-300 text-3xl transform hover:scale-110">
             <a
               href="mailto:trpiritr@gmail.com"
-              className="text-white hover:text-amber-500 hover:underline flex items-center gap-2" // Added flex and gap for icon and text alignment
+              className="text-white hover:text-amber-500 hover:underline flex items-center gap-2"
             >
               <FaEnvelope />
               <span className="sr-only">Email</span>{" "}
-              {/* Added screen reader text for accessibility */}
             </a>
           </div>
         </div>
       </div>
 
-      {/* Copyright text at the very bottom */}
       <div className="text-sm text-white text-center mt-8 pt-4 border-t border-lime-300/30">
         {" "}
-        {/* Added top border for separation and increased top margin */}© 2025
-        Piri Academy. Tüm Hakları Saklıdır.
+        © 2025 Piri Academy. Tüm Hakları Saklıdır.
       </div>
     </footer>
   );
