@@ -36,13 +36,13 @@ export default function SearchBar() {
   }, [searchTerm, searchParams.toString(), setSearchParams]);
 
   return (
-    <div className="flex w-56 items-center">
+    <div className="flex w-56  items-center">
       <input
         type="text"
         placeholder="Ara..."
         value={searchTerm}
         onChange={handleSearch}
-        className="flex-grow w-4/6 h-8 px-2 py-1.5 italic text-md border border-amber-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-amber-500 transition duration-300"
+        className="flex-grow w-4/6 h-10 py-1.5 px-2 italic  border border-amber-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-amber-500 transition duration-300"
       />
       <button
         onClick={() => {
@@ -62,7 +62,7 @@ export default function SearchBar() {
             }
           }
         }}
-        className="w-1/6 h-8 cursor-pointer bg-amber-400 text-white rounded-r-md hover:bg-amber-500 transition duration-300"
+        className="w-1/6 h-10 cursor-pointer bg-amber-400 text-white rounded-r-md hover:bg-amber-500 transition duration-300"
       >
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </button>

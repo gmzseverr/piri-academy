@@ -105,7 +105,7 @@ export default function FilterBar() {
     <div className="relative inline-block text-left" ref={dropdownRef}>
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="inline-flex items-center bg-amber-400 text-white rounded-md py-1.5 px-2 cursor-pointer hover:bg-amber-500 transition duration-300"
+        className="inline-flex h-10 items-center bg-amber-400 text-white rounded-md py-1.5 px-2 cursor-pointer hover:bg-amber-500 transition duration-300"
       >
         <FontAwesomeIcon icon={faFilter} className="mr-2" />
         Filtreler
