@@ -1,13 +1,13 @@
-"use client";
 import React from "react";
+import { createPortal } from "react-dom";
 
 function SDGModal({ goal, onClose }) {
   if (!goal) return null;
 
-  return ReactDOM.createPortal(
+  return createPortal(
     <div className="fixed inset-0 bg-gradient-to-br from-amber-300 to-cyan-100 flex items-center justify-center p-4 z-50 animate-fade-in">
       <div
-        className="relative bg-cover bg-center bg-no-repeat rounded-xl shadow-2xl max-w-4xl md:max-w-5xl w-full h-[85vh] md:h-[75vh] overflow-hidden flex flex-col justify-end animate-scale-in" // Modal boyutları, justified-end
+        className="relative bg-cover bg-center bg-no-repeat rounded-xl shadow-2xl max-w-4xl md:max-w-5xl w-full h-[85vh] md:h-[75vh] overflow-hidden flex flex-col justify-end animate-scale-in"
         style={{ backgroundImage: `url(${goal.wallpaper})` }}
       >
         <button
