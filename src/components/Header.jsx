@@ -14,7 +14,6 @@ function Header() {
       return;
     }
 
-    // Diğer sayfalarda scroll'a göre arkaplan değişsin
     const handleScroll = () => {
       const hakkimizdaSection = document.getElementById("hakkimizda");
       const hedeflerSection = document.getElementById("hedefler");
@@ -33,23 +32,33 @@ function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Cleanup
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location.pathname]);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
-  // Ana sayfadaysak scroll yap, değilsek önce anasayfaya git sonra scroll yap
-  const handleScrollOrNavigate = (id) => {
+  // Menü öğeleri, istediğin sıralama ile. blog scroll değil, path var.
+  const menuItems = [
+    { id: "anasayfa", label: "Anasayfa", scroll: true },
+    { id: "blog", label: "Blog", scroll: false, path: "/blog" },
+    { id: "hakkimizda", label: "Hakkımızda", scroll: true },
+    { id: "hedefler", label: "Hedefler", scroll: true },
+    { id: "iletisim", label: "İletişim", scroll: true },
+  ];
+
+  const handleClick = (item) => {
     closeMobileMenu();
 
-    if (location.pathname === "/") {
-      const element = document.getElementById(id);
-      if (element) element.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate("/", { state: { scrollToId: id } });
+    if (item.scroll) {
+      if (location.pathname === "/") {
+        const element = document.getElementById(item.id);
+        if (element) element.scrollIntoView({ behavior: "smooth" });
+      } else {
+        navigate("/", { state: { scrollToId: item.id } });
+      }
+    } else if (item.path) {
+      navigate(item.path);
     }
   };
 
@@ -73,28 +82,25 @@ function Header() {
         </div>
 
         <nav className="hidden md:flex space-x-8">
-          {["anasayfa", "hakkimizda", "hedefler", "iletisim"].map((section) => (
-            <button
-              key={section}
-              onClick={() => handleScrollOrNavigate(section)}
-              className="text-white text-lg font-semibold hover:text-amber-500 transition-colors duration-300 drop-shadow-md cursor-pointer"
-            >
-              {section === "anasayfa"
-                ? "Anasayfa"
-                : section === "hakkimizda"
-                ? "Hakkımızda"
-                : section === "hedefler"
-                ? "Hedefler"
-                : "İletişim"}
-            </button>
-          ))}
-
-          <Link
-            to="/blog"
-            className="text-white text-lg font-semibold hover:text-amber-500 transition-colors duration-300 drop-shadow-md cursor-pointer"
-          >
-            Blog
-          </Link>
+          {menuItems.map((item) =>
+            item.scroll ? (
+              <button
+                key={item.id}
+                onClick={() => handleClick(item)}
+                className="text-white text-lg font-semibold hover:text-amber-500 transition-colors duration-300 drop-shadow-md cursor-pointer"
+              >
+                {item.label}
+              </button>
+            ) : (
+              <Link
+                key={item.id}
+                to={item.path}
+                className="text-white text-lg font-semibold hover:text-amber-500 transition-colors duration-300 drop-shadow-md cursor-pointer"
+              >
+                {item.label}
+              </Link>
+            )
+          )}
         </nav>
 
         <div className="md:hidden">
@@ -115,32 +121,28 @@ function Header() {
         }`}
       >
         <ul className="flex flex-col items-center py-4 space-y-4">
-          {["anasayfa", "hakkimizda", "hedefler", "iletisim"].map((section) => (
-            <li key={section}>
-              <button
-                onClick={() => handleScrollOrNavigate(section)}
-                className="text-white text-lg font-semibold hover:text-amber-500 py-2 block cursor-pointer"
-              >
-                {section === "anasayfa"
-                  ? "Anasayfa"
-                  : section === "hakkimizda"
-                  ? "Hakkımızda"
-                  : section === "hedefler"
-                  ? "Hedefler"
-                  : "İletişim"}
-              </button>
-            </li>
-          ))}
-
-          <li>
-            <Link
-              to="/blog"
-              onClick={closeMobileMenu}
-              className="text-white text-lg font-semibold hover:text-amber-500 py-2 block cursor-pointer"
-            >
-              Blog
-            </Link>
-          </li>
+          {menuItems.map((item) =>
+            item.scroll ? (
+              <li key={item.id}>
+                <button
+                  onClick={() => handleClick(item)}
+                  className="text-white text-lg font-semibold hover:text-amber-500 py-2 block cursor-pointer"
+                >
+                  {item.label}
+                </button>
+              </li>
+            ) : (
+              <li key={item.id}>
+                <Link
+                  to={item.path}
+                  onClick={closeMobileMenu}
+                  className="text-white text-lg font-semibold hover:text-amber-500 py-2 block cursor-pointer"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
       </nav>
     </header>

@@ -137,25 +137,6 @@ export default function FilterBar() {
           </div>
 
           {/* Hedef Kitle */}
-          <div>
-            <h4 className="text-lg font-semibold mb-2">Hedef Kitle</h4>
-            <div className="flex flex-wrap gap-2 max-h-40 overflow-auto">
-              {AUDIENCE_OPTIONS.map(({ value, title }) => (
-                <button
-                  key={value}
-                  onClick={() => handleAudienceToggle(value)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 whitespace-nowrap
-                    ${
-                      selectedAudiences.includes(value)
-                        ? "bg-green-600 text-white"
-                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                    }`}
-                >
-                  {title}
-                </button>
-              ))}
-            </div>
-          </div>
 
           {/* Filtrele Butonu */}
           <div className="mt-6 text-center">
