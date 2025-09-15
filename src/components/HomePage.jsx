@@ -4,6 +4,7 @@ import Hero from "./Hero";
 import About from "./About";
 import Footer from "./Footer";
 import GoalCarousel from "./GoalCarousel";
+import ComingSoon from "./ComingSoon";
 
 export default function HomePage() {
   const location = useLocation();
@@ -23,6 +24,7 @@ export default function HomePage() {
     <>
       <section id="anasayfa">
         <Hero />
+        <ComingSoon />
       </section>
       <section id="hakkimizda">
         <About />

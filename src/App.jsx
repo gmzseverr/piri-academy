@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom"; // Router için
 import Header from "./components/Header";
 
-import "./App.css";
+import "./index.css";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
