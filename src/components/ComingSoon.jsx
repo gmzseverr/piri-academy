@@ -17,12 +17,13 @@ const ComingSoon = () => {
   }, []);
 
   const pngShapes = [
-    "/vecteezy_abstract-arrow-geometric-shape-3d-render_12629135.png",
-    "/vecteezy_a-purple-letter-s-with-a-curved-shape_52782779.png",
-    "/vecteezy_3d-shapes-squiggles-grainy-texture_17416943.png",
-    "/vecteezy_3d-render-of-a-basic-yellow-geometric-cube-shape_15738500.png",
-    "/vecteezy_3d-render-basic-shape-semi-circle-primitive-icon_8470765.png",
-    "/vecteezy_3d-render-basic-shape-cube-primitive-icon-illustration-with_8470782.png",
+    "/shape0.png",
+    "/shape1.png",
+    "/shape2.png",
+    "/shape3.png",
+    "/shape4.png",
+    "/shape5.png",
+    "/shape6.png",
   ];
 
   const [shapes, setShapes] = useState(
