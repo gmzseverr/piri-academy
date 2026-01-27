@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Privacy = () => {
   return (
     <section className="w-full min-h-screen bg-gradient-to-b from-orange-600 via-amber-50 to-amber-50">
-        <div className="w-full h-24 md:h-32 bg-black/10"></div>
+        <div className="w-full h-12 md:h-32 bg-black/10"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
       
         
