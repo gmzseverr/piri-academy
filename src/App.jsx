@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import Blog from "./components/Blog";
 import ContentDetail from "./components/ContentDetail";
 import HomePage from "./components/HomePage";
+import Privacy from "./components/Privacy";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/posts/:slug" element={<ContentDetail />} />
+        <Route path="/privacy" element={<Privacy />}/>
       </Routes>
     </>
   );
