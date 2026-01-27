@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 
 const PrivacyPolicy = () => {
@@ -127,9 +128,9 @@ const PrivacyPolicy = () => {
 
         {/* Geri Dön Butonu */}
         <div className="text-center mt-12">
-          <a href="/" className="inline-flex items-center gap-2 bg-orange-500 text-white font-bold py-3 px-8 rounded-full hover:bg-orange-600 transition-all shadow-lg hover:-translate-y-1">
+          <Link href="/" className="inline-flex items-center gap-2 bg-orange-500 text-white font-bold py-3 px-8 rounded-full hover:bg-orange-600 transition-all shadow-lg hover:-translate-y-1">
             <span>←</span> Ana Sayfaya Geri Dön
-          </a>
+          </Link>
         </div>
 
       </div>

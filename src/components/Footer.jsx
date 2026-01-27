@@ -1,5 +1,6 @@
 import React from "react";
 import { FaInstagram, FaEnvelope } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 function Footer() {
@@ -58,12 +59,12 @@ function Footer() {
           </p>
           
           {/* Gizlilik Politikası Buraya Geldi */}
-          <a 
+          <Link
             href="/privacy" 
             className="text-white/90 hover:text-white text-sm font-semibold underline underline-offset-4 decoration-white/50 hover:decoration-white transition-all"
           >
             Gizlilik Politikası
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
