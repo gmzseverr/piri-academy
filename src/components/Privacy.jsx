@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Privacy = () => {
+  // Sayfa açıldığında en üst noktadan başlamasını sağlar
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <section className="w-full min-h-screen bg-gradient-to-b from-orange-600 via-amber-50 to-amber-50">
-        <div className="w-full h-12 md:h-32 bg-black/10"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      
+    <section className="w-full min-h-screen bg-amber-50">
+      {/* Header yazılarınızın okunması için bırakılan şeffaf boşluk */}
+      <div className="w-full h-24 md:h-32"></div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
         
         {/* Başlık Kartı */}
         <motion.div
@@ -16,7 +22,7 @@ const Privacy = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-2xl md:text-4xl font-extrabold text-orange-600 mb-4 drop-shadow-md uppercase tracking-tight">
+          <h1 className="text-2xl md:text-4xl font-extrabold text-orange-600 mb-4 uppercase tracking-tight">
             PİRİ EĞİTİM UYGULAMASI <br className="hidden md:block"/>
             WEB SİTESİ GİZLİLİK POLİTİKASI VE KVKK AYDINLATMA METNİ
           </h1>
@@ -25,7 +31,7 @@ const Privacy = () => {
           </p>
         </motion.div>
 
-        {/* Politika İçeriği */}
+        {/* Politika İçeriği - Birebir Metin */}
         <motion.div 
           className="bg-white rounded-2xl shadow-lg p-6 md:p-12 max-w-5xl mx-auto text-gray-800 leading-relaxed text-sm md:text-base text-justify"
           initial={{ opacity: 0 }}
@@ -218,7 +224,7 @@ const Privacy = () => {
             </section>
 
             {/* İletişim */}
-            <section className="pt-8 border-t border-gray-200">
+            <section className="pt-8 border-t border-gray-200 text-center">
               <h2 className="text-xl font-bold text-gray-900 mb-1">İletişim</h2>
               <p><strong>Dilara GÜLNAZ</strong> İstanbul, Kağıthane <strong>trpiritr@gmail.com</strong></p>
             </section>
