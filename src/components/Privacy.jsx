@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 
-const PrivacyPolicy = () => {
+const Privacy = () => {
   return (
     <section className="w-full px-3 py-12 md:py-20 bg-amber-50 min-h-screen">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -138,4 +138,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default Privacy;
