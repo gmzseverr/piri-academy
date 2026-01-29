@@ -10,7 +10,7 @@ const DeleteAccount = () => {
   }, []);
 
   return (
-    <section className="w-full min-h-screen bg-red-40">
+    <section className="w-full min-h-screen bg-red-50">
       {/* Header Boşluğu */}
       <div className="w-full h-24 md:h-32"></div>
 
