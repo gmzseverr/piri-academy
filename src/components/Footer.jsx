@@ -1,5 +1,5 @@
 import React from "react";
-import { FaInstagram, FaEnvelope } from "react-icons/fa";
+import { FaInstagram, FaEnvelope ,FaTrashAlt} from "react-icons/fa";
 import { Link } from "react-router-dom"; 
 
 function Footer() {
