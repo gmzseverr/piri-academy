@@ -25,13 +25,20 @@ function Footer() {
         <div className="pt-6 border-t border-white/30 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/90 text-sm font-medium">© 2025 Piri Academy. Tüm Hakları Saklıdır.</p>
           
-          {/* DÜZELTİLDİ: href yerine to kullanıldı */}
+          {/* gizlilik */}
           <Link
             to="/privacy" 
             className="text-white/90 hover:text-white text-sm font-semibold underline underline-offset-4 decoration-white/50 hover:decoration-white transition-all"
           >
             Gizlilik Politikası
           </Link>
+          {/* hesap silme*/}
+            <Link
+              to="/delete-account" 
+              className="flex items-center gap-2 text-white/90 hover:text-red-500 text-sm font-semibold underline underline-offset-4 decoration-white/50 hover:decoration-red-500 transition-all"
+            >
+              <FaTrashAlt className="text-xs" /> Hesap Silme
+            </Link>
         </div>
       </div>
     </footer>

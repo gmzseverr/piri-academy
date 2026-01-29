@@ -10,6 +10,7 @@ import Blog from "./components/Blog";
 import ContentDetail from "./components/ContentDetail";
 import HomePage from "./components/HomePage";
 import Privacy from "./components/Privacy";
+import DeleteAccount from "./components/DeleteAccount";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/posts/:slug" element={<ContentDetail />} />
         <Route path="/privacy" element={<Privacy />}/>
+        <Route path="/delete-account" element={<DeleteAccount/>}/>
       </Routes>
     </>
   );
